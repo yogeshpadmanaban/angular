@@ -1,0 +1,78 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div style="border:2px solid gray ;text-align:center ">
+  <h1>
+    Client Details
+  </h1>
+
+  <form [formGroup]="clientmodule" class="client">
+    <table>
+
+      <tr>
+
+        <td>
+          <h2>Name</h2>
+        </td>
+
+        <td>
+          <input type="text" formControlName="name" placeholder="enter name">
+          <span *ngIf="name.hasError('required') && name.touched" class="errorMsg er-mg">Required</span>
+
+        </td>
+
+
+      </tr>
+      <tr>
+        <td>
+          <h2>Gender</h2>
+        </td>
+        <td><input type="radio" formControlName="gender" value="male">male
+          <input type="radio" formControlName="gender" value="female">female
+          <!--span *ngIf="gender.hasError('required') && gender.touched" class="errorMsg er-mg">Required</span-->
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <h2>Address</h2>
+        </td>
+        <td colspan="2"><input type="textarea" formControlName="address" placeholder="enter address">
+          <span *ngIf="address.hasError('required') && address.touched" class="errorMsg er-mg">Required</span></td>
+      </tr>
+
+      <tr>
+        <td>
+          <h2>Mobile number</h2>
+        </td>
+        <td><input type="text" formControlName="mobile" placeholder="enter mobile number">
+          <span *ngIf="mobile.hasError('required') && mobile.touched" class="errorMsg er-mg">Required</span></td>
+      </tr>
+      <tr>
+        <td>
+          <h2>Mail-id</h2>
+        </td>
+        <td><input type="email" formControlName="mail" placeholder="enter mail id">
+          <span *ngIf="mail.hasError('required') && mail.touched" class="errorMsg er-mg">Required</span></td>
+      </tr>
+      <tr>
+        <td><input type="submit" (click)="onClick(client)"></td>
+        <td><input type="reset"></td>
+      </tr>
+      
+      <!--button (click)="onClickMe()">Click me!</button-->
+    </table>
+  </form>
+
+
+
+
+
+
+
+
+</div>
+
+<nav>
+  <a routerLink="/clientdata" routerLinkActive="active">clientdata</a>
+ 
+</nav>
+
+<router-outlet></router-outlet>
