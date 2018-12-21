@@ -1,74 +1,70 @@
 <!--The content below is only a placeholder and can be replaced.-->
-<div style="border:2px solid gray ;text-align:center ">
+<!--div style="border:2px solid gray ;text-align:center "-->
   <h1>
     Client Details
   </h1>
-
+  <div class="col-sm-12">
+<div class="container-fluid">
+  
   <form [formGroup]="clientmodule" class="client">
-    <table>
+    <div class="form-group">
+      <label>Client Name</label>
+        <input type="text" class="form-control" formControlName="cliname" placeholder="Enter client name">
+        <span *ngIf="cliname.hasError('required') && cliname.touched" class="errorMsg er-mg">Required</span>
 
-      <tr>
-
-        <td>
-          <h2>Name</h2>
-        </td>
-
-        <td>
-          <input type="text" formControlName="name" placeholder="enter name">
-          <span *ngIf="name.hasError('required') && name.touched" class="errorMsg er-mg">Required</span>
-
-        </td>
-
-
-      </tr>
-      <tr>
-        <td>
-          <h2>Gender</h2>
-        </td>
-        <td><input type="radio" formControlName="gender" value="male">male
-          <input type="radio" formControlName="gender" value="female">female
-          <!--span *ngIf="gender.hasError('required') && gender.touched" class="errorMsg er-mg">Required</span-->
-        </td>
-      </tr>
-      <tr>
-        <td>
-          <h2>Address</h2>
-        </td>
-        <td colspan="2"><input type="textarea" formControlName="address" placeholder="enter address">
-          <span *ngIf="address.hasError('required') && address.touched" class="errorMsg er-mg">Required</span></td>
-      </tr>
-
-      <tr>
-        <td>
-          <h2>Mobile number</h2>
-        </td>
-        <td><input type="text" formControlName="mobile" placeholder="enter mobile number">
-          <span *ngIf="mobile.hasError('required') && mobile.touched" class="errorMsg er-mg">Required</span></td>
-      </tr>
-      <tr>
-        <td>
-          <h2>Mail-id</h2>
-        </td>
-        <td><input type="email" formControlName="mail" placeholder="enter mail id">
-          <span *ngIf="mail.hasError('required') && mail.touched" class="errorMsg er-mg">Required</span></td>
-      </tr>
-      <tr>
-        <td><input type="submit" (click)="onClick(client)"></td>
-        <td><input type="reset"></td>
-      </tr>
+    </div>
+    
+    <div class="form-group">
+        <label>Project Name</label>
+        <input type="text" class="form-control" formControlName="pjtname" placeholder="Enter project name">
+          <span *ngIf="pjtname.hasError('required') && pjtname.touched" class="errorMsg er-mg">Required</span>
+    </div>
+    <div class="form-group">
+        <label>Order Value</label>
+        <input type="text" formControlName="ovalue" class="form-control" placeholder="Enter order value">
+        <span *ngIf="ovalue.hasError('required') && ovalue.touched" class="errorMsg er-mg">Required</span>
+    </div>
+    <div class="form-group">
+        <label>Contract Signed Date</label>
+        <input type="date" formControlName="condate" class="form-control" placeholder="Enter date">
+          <span *ngIf="condate.hasError('required') && condate.touched" class="errorMsg er-mg">Required</span>
+    </div>
+    <div class="form-group">
+        <label>Description</label>
+        <textarea rows="3" formControlName="dcpt" class="form-control" placeholder="Enter discription"></textarea>
+          <span *ngIf="dcpt.hasError('required') && dcpt.touched" class="errorMsg er-mg">Required</span>
+    </div>
+    <div class="form-group">
+        <label>Start Date</label>
+        <input type="date" formControlName="stdate" class="form-control" placeholder="Enter start date">
+          <span *ngIf="stdate.hasError('required') && stdate.touched" class="errorMsg er-mg">Required</span>
+    </div>
+    <div class="form-group">
+        <label>Payment Term</label>
+        <input type="text" formControlName="pmtterm" class="form-control" placeholder="Enter Payment term">
+          <span *ngIf="pmtterm.hasError('required') && pmtterm.touched" class="errorMsg er-mg">Required</span>
+    </div>
+    <div class="form-group">
+        
+        <input class="btn btn-primary" type="submit"  (click)="onClick(client)" value="Submit">
+        
+        <input class="btn btn-primary" type="reset" value="Reset">
+       
+      </div>
+        
+    
+     
       
-      <!--button (click)="onClickMe()">Click me!</button-->
-    </table>
   </form>
 
-
-
-
-
-
-
-
+</div>  
 </div>
+
+
+
+
+
+
 
 <nav>
   <a routerLink="/clientdata" routerLinkActive="active">clientdata</a>
