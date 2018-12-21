@@ -17,11 +17,13 @@ export class clientmoduleComponent implements OnInit {
   clickMessage = '';
   loading: boolean;
   clientmodule: FormGroup;
-  name: AbstractControl;
-  gender: AbstractControl;
-  address: AbstractControl;
-  mobile: AbstractControl;
-  mail: AbstractControl;
+  cliname: AbstractControl;
+  pjtname: AbstractControl;
+  ovalue: AbstractControl;
+  condate: AbstractControl;
+  dcpt:AbstractControl;
+  stdate:AbstractControl;
+  pmtterm:AbstractControl;
   
   
   constructor(private router: Router,
@@ -29,20 +31,26 @@ export class clientmoduleComponent implements OnInit {
 
 
     this.clientmodule = this.formBuilder.group({
-      name: ['', Validators.required],
-      gender: ['', Validators.required],
-      address: ['', Validators.required],
-      mobile: ['', Validators.required],
-      mail: ['', Validators.required]
+      cliname: ['', Validators.required],
+      pjtname: ['', Validators.required],
+      ovalue: ['', Validators.required],
+      condate: ['', Validators.required],
+      dcpt:['',Validators.required],
+      stdate:['',Validators.required],
+      pmtterm:['',Validators.required],
+
 
 
     });
 
 
-    this.name = this.clientmodule.controls['name'];
-    this.address = this.clientmodule.controls['address'];
-    this.mobile = this.clientmodule.controls['mobile'];
-    this.mail = this.clientmodule.controls['mail'];
+    this.cliname = this.clientmodule.controls['cliname'];
+    this.pjtname = this.clientmodule.controls['pjtname'];
+    this.ovalue= this.clientmodule.controls['ovalue'];
+    this.condate = this.clientmodule.controls['condate'];
+    this.dcpt = this.clientmodule.controls['dcpt'];
+    this.stdate = this.clientmodule.controls['stdate'];
+    this.pmtterm = this.clientmodule.controls['pmtterm'];
   }
 
   ngOnInit() {
